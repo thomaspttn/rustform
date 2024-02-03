@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+
+<html lang="en">
 <head>
-    <title>Form Responses</title>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    {% for question_response in question_responses %}
-    <h2>{{ question_response.question }}</h2>
-    <ul>
-        {% for response in question_response.responses %}
-        <li>Score: {{ response.score }}, Comment: "{{ response.comment }}"</li>
+    <div class="container">
+        <h1>Interview Feedback</h1>
+        {% for question_response in question_responses %}
+        <div class="feedback-section">
+            <h2>{{ question_response.question }}</h2>
+            {% for response in question_response.responses %}
+            <div class="response">
+                    <span style="font-weight:bold">{{ response.user }}: </span><span style="color:{{ response.color }};font-weight:bold">{{ response.score }}</span>
+                <p class="comment">"{{ response.comment }}"</p>
+            </div>
+            {% endfor %}
+        </div>
         {% endfor %}
-    </ul>
-    {% endfor %}
+    </div>
 </body>
 </html>
 
