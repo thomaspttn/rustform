@@ -28,6 +28,10 @@ fn score_to_color(score: &str) -> String {
         "Neutral" => "#FFB300".to_string(), // Yellow/Middle
         "Agree" => "#81C784".to_string(),
         "Strong Agree" => "#388E3C".to_string(), // Green
+        "Strong Yes" => "#388E3C".to_string(), // Green
+        "Yes" => "#81C784".to_string(),
+        "No" => "#E57373".to_string(),
+        "Strong No" => "#D32F2F".to_string(), // Red
         _ => "#ffffff".to_string(), // Fallback color
     }
 }
