@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Responses</title>
+</head>
+<body>
+    {% for question_response in question_responses %}
+    <h2>{{ question_response.question }}</h2>
+    <ul>
+        {% for response in question_response.responses %}
+        <li>Score: {{ response.score }}, Comment: "{{ response.comment }}"</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</body>
+</html>
+
