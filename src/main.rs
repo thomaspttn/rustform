@@ -23,15 +23,15 @@ struct FormResponsesTemplate {
 
 fn score_to_color(score: &str) -> String {
     match score {
-        "Strong Disagree" => "#D32F2F".to_string(), // Red
+        "Strongly Disagree" => "#D32F2F".to_string(), // Red
+        "Strong No" => "#D32F2F".to_string(), // Red
         "Disagree" => "#E57373".to_string(),
+        "No" => "#E57373".to_string(),
         "Neutral" => "#FFB300".to_string(), // Yellow/Middle
         "Agree" => "#81C784".to_string(),
-        "Strong Agree" => "#388E3C".to_string(), // Green
-        "Strong Yes" => "#388E3C".to_string(), // Green
         "Yes" => "#81C784".to_string(),
-        "No" => "#E57373".to_string(),
-        "Strong No" => "#D32F2F".to_string(), // Red
+        "Strongly Agree" => "#388E3C".to_string(), // Green
+        "Strong Yes" => "#388E3C".to_string(), // Green
         _ => "#ffffff".to_string(), // Fallback color
     }
 }
